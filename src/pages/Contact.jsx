@@ -17,8 +17,8 @@ const Contact = () => {
     e.preventDefault();
     
     emailjs.sendForm(
-      'service_siyq41m', // Substitua pelo seu service ID do EmailJS
-      'template_gibfhhf', // Substitua pelo seu template ID
+      'service_hlad0hg', // Substitua pelo seu service ID do EmailJS
+      'template_hft2pjl', // Substitua pelo seu template ID
       form.current,
       'yheqgU_v5jWxQCR17' // Substitua pela sua public key
     )
