@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black;
+    font-family: 'Inter', sans-serif;
+  }
+
+  ::selection {
+    @apply bg-accent-light/10;
+  }
+}
+
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .nav-link {
+    @apply relative text-gray-400 hover:text-white transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute left-0 bottom-[-2px] w-0 h-[1px] bg-accent-light/50 transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .gradient-text {
+    @apply text-accent-main;
+  }
+
+  .card {
+    @apply bg-gray-900/50 backdrop-blur-sm rounded-sm p-6 
+           border-t border-accent-light/5
+           hover:border-accent-light/10 transition-all duration-300;
+  }
+
+  .button {
+    @apply px-6 py-3 rounded-sm font-medium transition-all duration-300;
+  }
+
+  .button-primary {
+    @apply button bg-accent-main text-black hover:bg-accent-light 
+           transition-colors duration-300;
+  }
+
+  .button-outline {
+    @apply button border border-accent-light/10 text-accent-light 
+           hover:border-accent-light/20 hover:bg-accent-light/5;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-light mb-8 text-accent-main tracking-tight;
+  }
+}
+
+/* Efeitos sutis */
+.minimal-card {
+  @apply bg-black border border-accent-light/5 
+         hover:border-accent-light/10 transition-all duration-300;
+}
+
+.bg-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.hover-translate {
+  @apply transition-transform duration-300 hover:-translate-y-1;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
