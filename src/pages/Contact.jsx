@@ -7,11 +7,28 @@ import {
   FaWhatsapp,
   FaDiscord
 } from 'react-icons/fa';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
+  const form = useRef();
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Implementar lógica de envio do formulário
+    
+    emailjs.sendForm(
+      'service_siyq41m', // Substitua pelo seu service ID do EmailJS
+      'template_gibfhhf', // Substitua pelo seu template ID
+      form.current,
+      'yheqgU_v5jWxQCR17' // Substitua pela sua public key
+    )
+    .then((result) => {
+      alert('Mensagem enviada com sucesso!');
+      form.current.reset();
+    }, (error) => {
+      alert('Erro ao enviar mensagem. Tente novamente.');
+      console.log(error.text);
+    });
   };
 
   return (
@@ -116,7 +133,7 @@ const Contact = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.4 }}
             >
-              <form onSubmit={handleSubmit} className="card hover-card space-y-6">
+              <form ref={form} onSubmit={handleSubmit} className="card hover-card space-y-6">
                 <h2 className="text-2xl font-semibold mb-6 gradient-text">
                   Envie uma Mensagem
                 </h2>
