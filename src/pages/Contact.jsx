@@ -147,13 +147,13 @@ const Contact = () => {
                   <FormField
                     label="Nome"
                     type="text"
-                    name="name"
+                    name="from_name"
                     placeholder="Seu nome"
                   />
                   <FormField
                     label="Email"
                     type="email"
-                    name="email"
+                    name="from_email"
                     placeholder="Seu email"
                   />
                 </div>
