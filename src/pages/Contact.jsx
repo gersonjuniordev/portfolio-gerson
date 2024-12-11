@@ -7,27 +7,32 @@ import {
   FaWhatsapp,
   FaDiscord
 } from 'react-icons/fa';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 
 const Contact = () => {
   const form = useRef();
 
+  useEffect(() => {
+    emailjs.init("yheqgU_v5jWxQCR17"); // Inicializa com sua Public Key
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
     emailjs.sendForm(
-      'service_hlad0hg', // Substitua pelo seu service ID do EmailJS
-      'template_hft2pjl', // Substitua pelo seu template ID
+      'service_siyq41m',
+      'template_gibfhhf',
       form.current,
-      'yheqgU_v5jWxQCR17' // Substitua pela sua public key
+      'yheqgU_v5jWxQCR17'
     )
     .then((result) => {
+      console.log(result.text);
       alert('Mensagem enviada com sucesso!');
       form.current.reset();
     }, (error) => {
-      alert('Erro ao enviar mensagem. Tente novamente.');
       console.log(error.text);
+      alert('Erro ao enviar mensagem. Tente novamente.');
     });
   };
 
