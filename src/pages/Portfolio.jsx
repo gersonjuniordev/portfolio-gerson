@@ -10,7 +10,7 @@ const Portfolio = () => {
       category: "Web Development",
       icon: <FaCode />,
       github: "https://github.com/gersonjuniordev/conseqmanager",
-      live: "https://www.conseqmanager.com.br",
+      live: "https://web-production-1cee.up.railway.app/",
       features: [
         "Assinatura de documentos",
         "Controle de empresas",
