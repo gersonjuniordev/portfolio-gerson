@@ -7,7 +7,7 @@ const Portfolio = () => {
       title: "ConseqManager",
       description: "Sistema Web para gestão de documentos e assinaturas digitais, desenvolvido com python e javascript",
       technologies: ["Python", "JavaScript", "PostgreSQL", "Websockets"],
-      category: "Web Development",
+      category: "Web Developmentt",
       icon: <FaCode />,
       github: "https://github.com/gersonjuniordev/conseqmanager",
       live: "https://web-production-1cee.up.railway.app/",
