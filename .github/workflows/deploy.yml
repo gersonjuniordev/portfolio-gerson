@@ -22,9 +22,12 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          PUBLIC_URL: 'https://gersonjuniordev.github.io/portfolio-gerson'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist 
+          folder: dist
+          clean: true 
