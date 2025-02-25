@@ -7,7 +7,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,11 +24,11 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          PUBLIC_URL: 'https://gersonjuniordev.github.io/portfolio-gerson'
+          VITE_BASE_URL: '/portfolio-gerson'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
           folder: dist
-          clean: true 
+          branch: gh-pages
+          token: ${{ secrets.GITHUB_TOKEN }} 
